@@ -1,0 +1,370 @@
+:root {
+  --color-primary: #955;
+  --color-primary-1-2: rgba(153, 85, 85, .5);
+  --color-secondary: #555;
+  --font-primary: "Titillium Web", sans-serif;
+}
+
+html {
+  font-family: var(--font-primary);
+  color: var(--color-secondary);
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--color-primary);
+}
+
+.highlight {
+  position: relative;
+  color: #fff;
+  z-index: 10;
+}
+
+.highlight::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  background-color: var(--color-primary);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
+h2 .highlight::before {
+  height: 3.9976rem;
+}
+
+.masthead .highlight::before {
+  height: 1.9994rem;
+}
+
+.hover {
+  opacity: 0;
+  transition:
+    opacity .25s;
+}
+
+.hover:hover {
+  opacity: 1;
+}
+
+.shift-up {
+  margin-top: -1rem;
+}
+
+
+/* ----- =Type ----- */
+
+h2 {
+  color: var(--color-primary);
+  font-weight: 300;
+  border-bottom: 2px solid var(--color-secondary);
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color .25s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+.no-under,
+.no-under:hover,
+.no-under:active,
+.no-under:focus {
+  text-decoration: none;
+}
+
+a.no-under:hover,
+a.no-under:active,
+a.no-under:focus {
+  color: var(--color-secondary);
+}
+
+/* ---------- =Header ---------- */
+
+.text-fff,
+.text-fff-hov:hover,
+.text-fff-hov:active,
+.text-fff-hov:focus {
+  color: #fff;
+}
+
+.text-primary,
+.text-primary-hov:hover,
+.text-primary-hov:active,
+.text-primary-hov:focus {
+  color: var(--color-primary);
+}
+
+.text-secondary,
+.text-secondary-hov:hover,
+.text-secondary-hov:active,
+.text-secondary-hov:focus {
+  color: var(--color-secondary);
+}
+
+.bg-primary,
+.bg-primary-hov:hover,
+.bg-primary-hov:active,
+.bg-primary-hov:focus {
+  background-color: var(--color-primary);
+}
+
+.bg-primary-1-2,
+.bg-primary-1-2-hov:hover,
+.bg-primary-1-2-hov:active,
+.bg-primary-1-2-hov:focus {
+  background-color: var(--color-primary-1-2);
+}
+
+/* ---------- =Header ---------- */
+
+.masthead {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.logo {
+  text-decoration: none;
+  transition: color .25s;
+}
+
+/* .logo:hover span,
+.logo:focus span,
+.logo:active span {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+} */
+
+.logo:hover .highlight,
+.logo:focus .highlight,
+.logo:active .highlight {
+  background-color: #fff;
+  color: var(--color-primary);
+  font-weight: 300;
+}
+
+.highlight-hover {
+  position: relative;
+  display: inline-block;
+  /* z-index: 10; */
+}
+
+.logo:hover .highlight-hover,
+.logo:focus .highlight-hover,
+.logo:active .highlight-hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.logo:hover .highlight-hover::before,
+.logo:active .highlight-hover::before,
+.logo:focus .highlight-hover::before {
+  content: " ";
+  position: absolute;
+  width: 100%;
+  background-color: var(--color-primary);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -5;
+}
+
+.masthead .highlight-hover::before {
+  height: 1.9994rem;
+}
+
+/* ----- =Toggle Nav ----- */
+
+.nav-label {
+  width: 2rem;
+  height: 1.5rem;
+  position: relative;
+  z-index: 1100;
+  display: inline-block;
+}
+
+.tog {
+  background-color: var(--color-primary);
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  left: 0;
+  border-radius: 5px;
+  transition: opacity .5s, transform .5s, left .5s, top .5s, bottom .5s;
+}
+
+.top {
+  top: 0;
+}
+
+.middle {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.bottom {
+  bottom: 0;
+}
+
+.nav-label-open .top {
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%) rotate(45deg);
+          transform: translateY(-50%) translateX(-50%) rotate(45deg);
+}
+
+.nav-label-open .middle {
+  opacity: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+.nav-label-open .bottom {
+  bottom: 50%;
+  left: 50%;
+  -webkit-transform: translateY(50%) translateX(-50%) rotate(-45deg);
+          transform: translateY(50%) translateX(-50%) rotate(-45deg);
+}
+
+nav {
+  position: fixed;
+  width: 66%;
+  height: calc(100vh - 3.5488rem);
+  top: 3.5488rem;
+  background-color: var(--color-primary);
+  transition: left .5s ease-in-out;
+  padding-top: .65rem;
+}
+
+.nav-closed {
+  left: -100vw;
+}
+
+.nav-open {
+  left: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color .25s;
+}
+
+/* ---------- =Main ---------- */
+
+/* ----- =Banner ----- */
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.banner-slides {
+  width: 400vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: bannerSlides 25s 3.7037s alternate infinite;
+}
+
+.banner-slides:hover {
+  -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+     animation-play-state: paused;
+}
+
+.slide-1 {
+  background: url("../images/space-travel.jpg") center center / cover no-repeat;
+}
+
+.slide-2 {
+ opacity: .75;
+}
+
+.slide-3 {
+ opacity: .50;
+}
+
+.slide-4 {
+ opacity: .25;
+}
+
+[class*="slide-"]:not(.slide-1),
+.embed {
+  background-color: #cbffd6;
+}
+
+.work-preview .unit:hover {
+  text-decoration: none;
+}
+
+.work-preview .unit:hover .hover {
+ opacity: 1;
+}
+
+.work-preview h3 {
+  color: var(--color-secondary);
+  transition: color .25s;
+}
+
+.work-preview .unit:hover h3 {
+  color: var(--color-primary);
+}
+
+@media only screen and (min-width: 38em) {
+
+  /* ----- =Header ----- */
+
+  nav {
+    position: static;
+    width: auto;
+    height: auto;
+    box-shadow: none;
+    border-bottom: none;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #fff;
+    text-align: right;
+    padding-top: 0;
+  }
+
+  nav .list-group li {
+    display: inline-block;
+  }
+
+  nav a {
+    color: var(--color-secondary)
+  }
+
+  nav a:hover,
+  nav a:focus,
+  nav a:active {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+
+}
