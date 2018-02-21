@@ -1,13 +1,16 @@
 :root {
   --color-primary: #955;
+  --color-primary-dark: #733;
   --color-primary-1-2: rgba(153, 85, 85, .5);
   --color-secondary: #555;
+  --color-secondary: #333;
   --font-primary: "Titillium Web", sans-serif;
 }
 
 html {
   font-family: var(--font-primary);
   color: var(--color-secondary);
+  text-transform: lowercase;
 }
 
 ::selection {
@@ -113,6 +116,20 @@ a.no-under:focus {
 .text-secondary-hov:active,
 .text-secondary-hov:focus {
   color: var(--color-secondary);
+}
+
+.bg-fff,
+.bg-fff-hov:hover,
+.bg-fff-hov:active,
+.bg-fff-hov:focus {
+  background-color: #fff;
+}
+
+.bg-fff-1-2,
+.bg-fff-1-2-hov:hover,
+.bg-fff-1-2-hov:active,
+.bg-fff-1-2-hov:focus {
+  background-color: rgba(255, 255, 255, .5);
 }
 
 .bg-primary,
@@ -276,52 +293,128 @@ nav a {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 3.54875rem);
   overflow: hidden;
+  margin-top: 3.54875rem;
 }
 
 .banner-slides {
   width: 400vw;
-  height: 100vh;
+  height: calc(100vh - 3.54875rem);
   position: absolute;
   top: 0;
-  left: 0;
-  animation: bannerSlides 25s 3.7037s alternate infinite;
-}
-
-.banner-slides:hover {
-  -webkit-animation-play-state: paused;
-    -moz-animation-play-state: paused;
-    -o-animation-play-state: paused;
-     animation-play-state: paused;
+  transition: left 1s ease-in-out;
 }
 
 .slide-1 {
-  background: url("../images/space-travel.jpg") center center / cover no-repeat;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)) top left / 100% 50% no-repeat,
+    url("../images/redblacks-collage.jpg") bottom center / cover no-repeat;
 }
 
 .slide-2 {
- opacity: .75;
+  background: url("../images/banner-67.jpg") center center / cover no-repeat;
 }
 
 .slide-3 {
- opacity: .50;
+  background: url("../images/space-travel.jpg") center center / cover no-repeat;
 }
 
 .slide-4 {
- opacity: .25;
-}
-
-[class*="slide-"]:not(.slide-1),
-.embed {
   background-color: #cbffd6;
+  opacity: .25;
 }
 
-.work-preview .unit:hover {
+/* ----- =Slide Controls ----- */
+
+.slide-input-1:checked ~ .banner-slides {
+  left: 0;
+  animation: bannerSlidesOne 25s ease-in-out alternate infinite;
+  animation-delay: 3.7037s;
+}
+
+.slide-input-2:checked ~ .banner-slides {
+  left: -100vw;
+  animation: bannerSlidesTwo 25s ease-in-out alternate infinite;
+  animation-delay: -4.629625s;
+}
+
+.slide-input-3:checked ~ .banner-slides {
+  left: -200vw;
+  animation: bannerSlidesThree 25s ease-in-out alternate infinite;
+  animation-delay: -12.962975s;
+}
+
+.slide-input-4:checked ~ .banner-slides {
+  left: -300vw;
+  animation: bannerSlidesFour 25s ease-in-out alternate infinite;
+  animation-delay: -21.2963s;
+}
+
+.slide-input-1:checked ~ .slide-labels .slide-indicator {
+  transform: translate(-455%, -38%);
+  animation: bannerSlidesIndicator1 25s alternate infinite;
+  animation-delay: 3.7037s;
+}
+
+.slide-input-2:checked ~ .slide-labels .slide-indicator {
+  transform: translate(-186%, -38%);
+  animation: bannerSlidesIndicator2 25s alternate infinite;
+  animation-delay: -4.629625s;
+}
+
+.slide-input-3:checked ~ .slide-labels .slide-indicator {
+  transform: translate(86%, -38%);
+  animation: bannerSlidesIndicator3 25s alternate infinite;
+  animation-delay: -12.962975s;
+}
+
+.slide-input-4:checked ~ .slide-labels .slide-indicator {
+  transform: translate(357%, -38%);
+  animation: bannerSlidesIndicator4 25s alternate infinite;
+  animation-delay: -21.2963s;
+}
+
+.slide-input-1:focus ~ .slide-labels .slide-label-1,
+.slide-input-2:focus ~ .slide-labels .slide-label-2,
+.slide-input-3:focus ~ .slide-labels .slide-label-3,
+.slide-input-4:focus ~ .slide-labels .slide-label-4 {
+  outline: 3px solid #000;
+  outline-offset: 0;
+}
+
+.slide-labels {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .25)) top left / cover no-repeat;
+}
+
+[class*="slide-label-"] {
+  width: 1rem;
+  height: 1rem;
+  background: url("../images/radio.svg") center center / cover no-repeat;
+  display: inline-block;
+  margin: 0 .75rem;
+}
+
+.slide-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  background: url("../images/radio-selected.svg") center center / cover no-repeat;
+}
+
+/* - End of Slide Controls - */
+
+.work-preview .unit:hover,
+.work-preview .unit:focus,
+.work-preview .unit:active {
   text-decoration: none;
 }
 
-.work-preview .unit:hover .hover {
+.work-preview .unit:hover .hover,
+.work-preview .unit:focus .hover,
+.work-preview .unit:active .hover {
  opacity: 1;
 }
 
@@ -330,8 +423,16 @@ nav a {
   transition: color .25s;
 }
 
-.work-preview .unit:hover h3 {
+.work-preview .unit:hover h3,
+.work-preview .unit:focus h3,
+.work-preview .unit:active h3 {
   color: var(--color-primary);
+}
+
+.embed-overlay {
+  padding-top: 56.25%;
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, .5)) bottom left / 100% 50% no-repeat; */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)) bottom left / 100% 50% no-repeat;
 }
 
 @media only screen and (min-width: 38em) {
@@ -366,5 +467,22 @@ nav a {
     text-decoration: none;
   }
 
+  nav li:last-child a {
+    margin-right: -.75rem;
+  }
+
+  .banner {
+    height: calc(100vh - 4.5028rem);
+    margin-top: 4.5028rem;
+  }
+
+}
+
+@media only screen and (min-width: 60em) {
+
+  .banner {
+    height: calc(100vh - 4.8729rem);
+    margin-top: 4.8729rem;
+  }
 
 }

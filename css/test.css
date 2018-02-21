@@ -1,0 +1,85 @@
+.slide-input-1:checked ~ .banner-slides {
+  left: 0;
+  animation: bannerSlidesOne 25s alternate infinite;
+  animation-delay: 3.7037s;
+}
+
+.slide-input-2:checked ~ .banner-slides {
+  left: -100vw;
+  animation: bannerSlidesTwo 25s alternate infinite;
+  animation-delay: -4.629625s;
+}
+
+.slide-input-3:checked ~ .banner-slides {
+  left: -200vw;
+  animation: bannerSlidesThree 25s alternate infinite;
+  animation-delay: -12.962975s;
+}
+
+.slide-input-4:checked ~ .banner-slides {
+  left: -300vw;
+  animation: bannerSlidesFour 25s alternate infinite;
+  animation-delay: -21.2963s;
+}
+
+.slide-input-1:checked ~ .slide-labels .slide-indicator {
+  transform: translate(-455%, -38%);
+  animation: bannerSlidesIndicator1 25s alternate infinite;
+  animation-delay: 3.7037s;
+}
+
+.slide-input-2:checked ~ .slide-labels .slide-indicator {
+  transform: translate(-186%, -38%);
+  animation: bannerSlidesIndicator2 25s alternate infinite;
+  animation-delay: -4.629625s;
+}
+
+.slide-input-3:checked ~ .slide-labels .slide-indicator {
+  transform: translate(86%, -38%);
+  animation: bannerSlidesIndicator3 25s alternate infinite;
+  animation-delay: -12.962975s;
+}
+
+.slide-input-4:checked ~ .slide-labels .slide-indicator {
+  transform: translate(357%, -38%);
+  animation: bannerSlidesIndicator4 25s alternate infinite;
+  animation-delay: -21.2963s;
+}
+
+
+.slide-labels {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .25)) top left / cover no-repeat;
+}
+
+[class*="slide-label-"] {
+  width: 1rem;
+  height: 1rem;
+  background: url("../images/radio.svg") center center / cover no-repeat;
+  display: inline-block;
+  margin: 0 .75rem;
+}
+
+.slide-indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  background: url("../images/radio-selected.svg") center center / cover no-repeat;
+}
+
+/* .slide-input-1:checked ~ .slide-labels .slide-label-1,
+.slide-input-2:checked ~ .slide-labels .slide-label-2,
+.slide-input-3:checked ~ .slide-labels .slide-label-3,
+.slide-input-4:checked ~ .slide-labels .slide-label-4 {
+  background: url("../images/radio-selected.svg") center center / cover no-repeat;
+} */
+
+1
+  transform: translate(-455%, -38%);
+2
+transform: translate(-186%, -38%);
+3
+transform: translate(186%, -38%);
+4
+transform: translate(357%, -38%);
