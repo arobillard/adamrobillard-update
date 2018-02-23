@@ -242,6 +242,16 @@ svg.img-flex {
   vertical-align: middle;
 }
 
+.i-1rem, .i--1rem {
+  height: 1rem;
+  width: 1rem;
+}
+
+.i-2rem, .i--2rem {
+  height: 2rem;
+  width: 2rem;
+}
+
 .i-3rem, .i--3rem {
   height: 3rem;
   width: 3rem;
