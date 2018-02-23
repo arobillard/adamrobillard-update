@@ -2,6 +2,7 @@
   --color-primary: #955;
   --color-primary-dark: #733;
   --color-primary-1-2: rgba(153, 85, 85, .5);
+  --color-primary-85: rgba(153, 85, 85, .85);
   --color-secondary: #555;
   --color-secondary: #333;
   --font-primary: "Titillium Web", sans-serif;
@@ -35,12 +36,22 @@ html {
   z-index: -5;
 }
 
-h2 .highlight::before {
-  height: 3.9976rem;
+/* h1 .highlight::before {
+  background-color: #fff;
 }
 
+h1 .highlight {
+  color: var(--color-secondary);
+} */
+
+h1 .highlight::before,
+h2 .highlight::before {
+  height: 2.8rem;
+}
+
+
 .masthead .highlight::before {
-  height: 1.9994rem;
+  height: 1.96rem;
 }
 
 .hover {
@@ -56,7 +67,6 @@ h2 .highlight::before {
 .shift-up {
   margin-top: -1rem;
 }
-
 
 /* ----- =Type ----- */
 
@@ -149,7 +159,7 @@ a.no-under:focus {
 /* ---------- =Header ---------- */
 
 .masthead {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, .85);
   position: fixed;
   width: 100%;
   top: 0;
@@ -264,13 +274,22 @@ a.no-under:focus {
 
 nav {
   position: fixed;
-  width: 66%;
+  width: 100%;
   height: calc(100vh - 3.5488rem);
   top: 3.5488rem;
-  background-color: var(--color-primary);
+  background-color: var(--color-primary-85);
   transition: left .5s ease-in-out;
   padding-top: .65rem;
+  text-align: center;
 }
+
+/* nav ul {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
 
 .nav-closed {
   left: -100vw;
@@ -291,120 +310,17 @@ nav a {
 /* ----- =Banner ----- */
 
 .banner {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 3.54875rem);
-  overflow: hidden;
-  margin-top: 3.54875rem;
-}
-
-.banner-slides {
-  width: 400vw;
-  height: calc(100vh - 3.54875rem);
-  position: absolute;
-  top: 0;
-  transition: left 1s ease-in-out;
-}
-
-.slide-1 {
+  /* height: calc(100vh - 3.54875rem); */
+  height:100vh;
+  /* margin-top: 3.54875rem; */
   background:
-    linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5)) top left / 100% 50% no-repeat,
-    url("../images/redblacks-collage.jpg") bottom center / cover no-repeat;
+    linear-gradient(to top, rgba(85, 85, 85, .75), rgba(85, 85, 85, .75)) top left / cover no-repeat,
+    url("../images/banner-bg.jpg") bottom center / cover no-repeat;
+  text-align: center;
+  position: relative;
+  z-index: 100000;
+  /* background-color: #555; */
 }
-
-.slide-2 {
-  background: url("../images/banner-67.jpg") center center / cover no-repeat;
-}
-
-.slide-3 {
-  background: url("../images/space-travel.jpg") center center / cover no-repeat;
-}
-
-.slide-4 {
-  background-color: #cbffd6;
-  opacity: .25;
-}
-
-/* ----- =Slide Controls ----- */
-
-.slide-input-1:checked ~ .banner-slides {
-  left: 0;
-  animation: bannerSlidesOne 25s ease-in-out alternate infinite;
-  animation-delay: 3.7037s;
-}
-
-.slide-input-2:checked ~ .banner-slides {
-  left: -100vw;
-  animation: bannerSlidesTwo 25s ease-in-out alternate infinite;
-  animation-delay: -4.629625s;
-}
-
-.slide-input-3:checked ~ .banner-slides {
-  left: -200vw;
-  animation: bannerSlidesThree 25s ease-in-out alternate infinite;
-  animation-delay: -12.962975s;
-}
-
-.slide-input-4:checked ~ .banner-slides {
-  left: -300vw;
-  animation: bannerSlidesFour 25s ease-in-out alternate infinite;
-  animation-delay: -21.2963s;
-}
-
-.slide-input-1:checked ~ .slide-labels .slide-indicator {
-  transform: translate(-455%, -38%);
-  animation: bannerSlidesIndicator1 25s alternate infinite;
-  animation-delay: 3.7037s;
-}
-
-.slide-input-2:checked ~ .slide-labels .slide-indicator {
-  transform: translate(-186%, -38%);
-  animation: bannerSlidesIndicator2 25s alternate infinite;
-  animation-delay: -4.629625s;
-}
-
-.slide-input-3:checked ~ .slide-labels .slide-indicator {
-  transform: translate(86%, -38%);
-  animation: bannerSlidesIndicator3 25s alternate infinite;
-  animation-delay: -12.962975s;
-}
-
-.slide-input-4:checked ~ .slide-labels .slide-indicator {
-  transform: translate(357%, -38%);
-  animation: bannerSlidesIndicator4 25s alternate infinite;
-  animation-delay: -21.2963s;
-}
-
-.slide-input-1:focus ~ .slide-labels .slide-label-1,
-.slide-input-2:focus ~ .slide-labels .slide-label-2,
-.slide-input-3:focus ~ .slide-labels .slide-label-3,
-.slide-input-4:focus ~ .slide-labels .slide-label-4 {
-  outline: 3px solid #000;
-  outline-offset: 0;
-}
-
-.slide-labels {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .25)) top left / cover no-repeat;
-}
-
-[class*="slide-label-"] {
-  width: 1rem;
-  height: 1rem;
-  background: url("../images/radio.svg") center center / cover no-repeat;
-  display: inline-block;
-  margin: 0 .75rem;
-}
-
-.slide-indicator {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 1rem;
-  height: 1rem;
-  background: url("../images/radio-selected.svg") center center / cover no-repeat;
-}
-
-/* - End of Slide Controls - */
 
 .work-preview .unit:hover,
 .work-preview .unit:focus,
@@ -437,6 +353,15 @@ nav a {
 
 @media only screen and (min-width: 38em) {
 
+  h1 .highlight::before,
+  h2 .highlight::before {
+    height: 3.61846rem;
+  }
+
+  .masthead .highlight::before {
+    height: 2.1108rem;
+  }
+
   /* ----- =Header ----- */
 
   nav {
@@ -447,7 +372,7 @@ nav a {
     border-bottom: none;
     display: inline-block;
     vertical-align: middle;
-    background-color: #fff;
+    background-color: transparent;
     text-align: right;
     padding-top: 0;
   }
@@ -470,19 +395,20 @@ nav a {
   nav li:last-child a {
     margin-right: -.75rem;
   }
-
+/*
   .banner {
     height: calc(100vh - 4.5028rem);
     margin-top: 4.5028rem;
-  }
+  } */
 
 }
 
 @media only screen and (min-width: 60em) {
 
-  .banner {
+  /* .banner {
     height: calc(100vh - 4.8729rem);
     margin-top: 4.8729rem;
-  }
+    text-align: right;
+  } */
 
 }
