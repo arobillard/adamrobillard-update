@@ -29,19 +29,113 @@
           <span class="tog bottom"></span>
         </div>
       </div>
-      <nav class="unit [ m-1-2 ] nav-closed" id="nav" role="navigation" tabindex="0">
+      <nav class="unit [ m-1-2 ] nav-closed" id="nav" role="navigation">
         <ul class="list-group push-0">
-          <li><a class="island-1-2 block bold mega" href="index.html#work" onclick="toggleNav(), toggleNavTog()">Work</a></li>
-          <li><a class="island-1-2 block bold mega" href="index.html#about" onclick="toggleNav(), toggleNavTog()">About</a></li>
+          <li><a class="island-1-2 block bold mega" href="/#work" onclick="toggleNav(), toggleNavTog()">Work</a></li>
+          <li><a class="island-1-2 block bold mega" href="/#about" onclick="toggleNav(), toggleNavTog()">About</a></li>
           <li><a class="island-1-2 block bold mega" href="mailto:robi0653@algonquinlive.com">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-  <main id="main" role="main" tabindex="0">
-    <section id="sports" class="pad-t-2 gutter-1-2" tabindex="0">
+  <main class="pad-t-2" id="main" role="main" tabindex="0">
+    <section class="portfolio-nav pad-t-2 gutter-1-2">
+      <div class="wrapper pad-t-2 gutter-1-2">
+        <h1 class="push-1-2">Sports Design</h1>
+        <ul class="list-group-inline">
+          <li class=""><a href="#campaign">Ticket Campaign</a></li>
+          <li class="gutter"><a href="#jerseys">Jersey Design</a></li>
+          <li class=""><a href="#projects">Personal Projects</a></li>
+        </ul>
+      </div>
+    </section>
+    <section id="jerseys" class="pad-t-2 gutter-1-2">
       <div class="wrapper pad-t-2">
-        <h1 class="gutter-1-2">Sports Design</h1>
+        <div class="gutter-1-2">
+          <h2>Jersey Design</h2>
+        </div>
+        <h3 class="gutter-1-2 push-0">Quidditch Canada</h3>
+        <div class="grid push-2">
+          <div class="unit [ xs-1 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/quidcan/banner-qc.jpg" aria-details="#quidcan-front-desc" alt="">
+              <span class="item-number">1</span>
+            </div>
+          </div>
+          <div class="unit [ xs-1 m-2-3 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/quidcan/tc-jersey.svg" aria-details="#quidcan-print-desc" alt="">
+              <span class="item-number item-number-left item-number-dark">2</span>
+            </div>
+          </div>
+          <div class="unit [ xs-1 m-1-3 ] island-1-2">
+            <ol>
+              <li id="quidcan-front-desc" class="push-1-2">View of the front of the 2016 Quidditch Canada jersey.</li>
+              <li id="quidcan-print-desc" class="push-1-2">Final print file sent to the jersey printer.</li>
+              <li id="quidcan-back-desc" class="push-1-2">View of the back of the 2016 Quidditch Canada jersey.</li>
+              <li id="quidcan-team-desc" class="push-1-2">Team photo of the 2016 Team Canada Quidditch.</li>
+            </ol>
+          </div>
+          <div class="unit [ xs-1 m-1-3 ] island-1-2">
+            <div class="embed embed-third">
+              <img class="embed-item" src="images/quidcan/tc-mccrady.jpg" aria-details="#quidcan-back-desc" alt="">
+              <span class="item-number">3</span>
+            </div>
+          </div>
+          <div class="unit [ xs-1 m-2-3 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/quidcan/tc-team.jpg" aria-details="#quidcan-team-desc" alt="">
+              <span class="item-number">4</span>
+            </div>
+          </div>
+        </div>
+        <h3 class="gutter-1-2 push-0">Valhalla Quidditch</h3>
+        <div class="grid">
+          <div class="unit [ xs-1 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/valhalla/valfreyja-jersey.svg" aria-details="#valhfreyja-desc" alt="">
+              <!-- <span class="item-number item-number-dark">1</span> -->
+            </div>
+          </div>
+          <div class="unit [ xs-1 m-2-3 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/valhalla/valhalla-jersey.svg" aria-details="#valhalla-desc" alt="">
+              <!-- <span class="item-number item-number-left item-number-dark">2</span> -->
+            </div>
+          </div>
+          <div class="unit [ xs-1 m-1-3 ] island-1-2">
+            <p class="push-0">Jersey designs for two affiliated teams within the same club. Created to have a unifying theme but each having their own unique feel.</p>
+            <!-- <ol>
+              <li id="valhfreyja-desc" class="push-1-2">Valfreyja jersey design.</li>
+              <li id="valhalla-desc" class="push-1-2">Final print file sent to the jersey printer.</li>
+            </ol> -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects" class="pad-t-2 pad-b-2 gutter-1-2">
+      <div class="wrapper pad-t-2">
+        <div class="gutter-1-2">
+          <h2>Personal Projects</h2>
+        </div>
+        <div class="grid">
+          <div class="unit [ xs-1 ] island-1-2">
+            <div class="embed embed-16by9">
+              <img class="embed-item" src="images/redblacks-collage.jpg" aria-details="#redblacks-desc" alt="">
+            </div>
+          </div>
+          <div class="unit [ xs-1 l-2-3 ] island-1-2">
+            <div class="embed embed-16by9">
+              <video class="embed-item" src="videos/goal-graphic.mp4" aria-details="#goal-graphic-desc" type="video/mp4" poster="images/goal-graphic.jpg" muted autoplay muted loop></video>
+            </div>
+          </div>
+          <div class="unit [ xs-1 l-1-3 ] island-1-2">
+            <ol>
+              <li id="redblacks-desc" class="push-1-2">Promotional banner for the Ottawa RedBlacks CFL football team.</li>
+              <li id="goal-graphic-desc" class="push-1-2">Redesigned goal graphic for NHL game broadcasts.</li>
+            </ol>
+          </div>
+        </div>
       </div>
     </section>
   </main>

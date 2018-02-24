@@ -5,12 +5,21 @@
   --color-primary-85: rgba(153, 85, 85, .85);
   --color-secondary: #555;
   --color-secondary-dark: #333;
+  --color-secondary-light: #aaa;
+  --color-secondary-light-1-2: rgba(170, 170, 170, .5);
   --font-primary: "Titillium Web", sans-serif;
 }
 
 html {
   font-family: var(--font-primary);
   color: var(--color-secondary);
+  /* text-transform: lowercase; */
+  background-color: #f2f2f2;
+}
+
+.masthead,
+h1,
+h2 {
   text-transform: lowercase;
 }
 
@@ -326,6 +335,47 @@ nav a {
   color: var(--color-primary)
 }
 
+/* --------------- =Portfolio Pages --------------- */
+/*
+.portfolio-nav ul {
+  border-bottom: 2px solid var(--color-secondary);
+} */
+
+ol {
+  padding-left: .975rem;
+}
+
+ol li::before {
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+.embed-third {
+  padding-top: 116.5302%;
+}
+
+.item-number {
+  position: absolute;
+  bottom: .75rem;
+  right: .75rem;
+  background-color: rgba(255, 255, 255, .5);
+  border-radius: 50%;
+  color: var(--color-secondary);
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+}
+
+.item-number-left {
+  left: .75rem;
+  right: auto;
+}
+
+.item-number-dark {
+  color: #fff;
+  background-color: var(--color-secondary-light-1-2);
+}
+
 @media only screen and (min-width: 38em) {
 
   h1 .highlight::before,
@@ -372,6 +422,11 @@ nav a {
     margin-right: -.75rem;
   }
 
+
+  ol {
+    padding-left: 1.05rem;
+  }
+
   .footer {
     text-align: left;
   }
@@ -384,5 +439,8 @@ nav a {
 
 @media only screen and (min-width: 60em) {
 
+  ol {
+    padding-left: 1.125rem;
+  }
 
 }
