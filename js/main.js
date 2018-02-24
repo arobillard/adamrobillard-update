@@ -13,8 +13,8 @@ $(document).ready(function(){
 });
 
 function toggleNav() {
-  document.getElementById("slide-nav").classList.toggle("nav-closed");
-  document.getElementById("slide-nav").classList.toggle("nav-open");
+  document.getElementById("nav").classList.toggle("nav-closed");
+  document.getElementById("nav").classList.toggle("nav-open");
 };
 
 function toggleNavTog() {

@@ -264,7 +264,7 @@ nav {
 }
 
 .nav-closed {
-  left: -100vw;
+  left: -150vw;
 }
 
 .nav-open {
@@ -285,7 +285,8 @@ nav a {
   height:100vh;
   background:
     linear-gradient(to top, rgba(85, 85, 85, .75), rgba(85, 85, 85, .75)) top left / cover no-repeat,
-    url("../images/banner-bg.jpg") bottom center / cover no-repeat;
+    url("../images/banner-bg.jpg") bottom center / cover no-repeat,
+    #fff;
   text-align: center;
   position: relative;
   z-index: 100000;
