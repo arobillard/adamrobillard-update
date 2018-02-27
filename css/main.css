@@ -301,10 +301,15 @@ nav a {
   z-index: 100000;
 }
 
+.work-preview .unit {
+  transition: background-color .25s;
+}
+
 .work-preview .unit:hover,
 .work-preview .unit:focus,
 .work-preview .unit:active {
   text-decoration: none;
+  background-color: #fafafa;
 }
 
 .work-preview h3 {
